@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs">
+                    <div id="sub-head">
+                        <img src="assets/Images/MyBoii.jpg">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="sub-head">
+                        <div id="sub-title">
+                            <h1>Train Scheduler</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs">
+                    <div class="sub-head">
+                        <img src="assets/Images/MyBoii.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Train Schedule -->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table table="train-schedule">
+                        <div class="sub-body">
+                            <h2>Current Train Schedule</h2>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><b>Train Name</b></th>
+                                    <th scope="col"><b>Destination</b></th>
+                                    <th scope="col"><b>Frequency (min)</b></th>
+                                    <th scope="col"><b>Next Arrival</b></th>
+                                    <th scope="col"><b>Minutes Away</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Train input shows here -->
+                                    <td id="name">Thomas</td>
+                                    <td id="destination">Vicarstown</td>
+                                    <td id="frequency">26</td>
+                                    <td id="arrival">04:20PM</td>
+                                    <td id="minutes">30</td>
+                                </tr>
+                            </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <!-- Train Input -->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="sub-body">
+                        <h2>Add Train</h2>
+                        <div class="add-train">
+                            <!-- TRAIN INPUT GOES HERE-->
+                            <form>
+                                <!-- name-input -->
+                                <div class="input-group">
+                                    <span class="input-group-addon"></span>
+                                    <input id="name-input" type="text" class="form-control" name="msg" placeholder="Train-Name">
+                                </div>
+                                <br>
+                                <!-- dest-input -->
+                                <div class="input-group">
+                                    <span class="input-group-addon"></span>
+                                    <input id="dest-input" type="text" class="form-control" name="msg" placeholder="Destination">
+                                </div>
+                                <br>
+                                <!-- freq-input -->
+                                <div class="input-group">
+                                    <span class="input-group-addon"></span>
+                                    <input id="freq-input" type="text" class="form-control" name="msg" placeholder="Frequency (min)">
+                                </div>
+                                <br>
+                                <!-- time-input -->
+                                <div class="input-group">
+                                    <span class="input-group-addon"></span>
+                                    <input id="time-input" type="text" class="form-control" name="msg" placeholder="First-Train-Time (hh:mm)">
+                                </div>
+                                <br>
+                                <!-- submit -->
+                                <button id="submit" type="submit" class="btn btn-success">Submit</button>
+                                <br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- container /div -->
+    </div>
+
+</body>

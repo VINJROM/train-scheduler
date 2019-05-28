@@ -1,0 +1,36 @@
+body {
+    background: darkblue;
+    color: white;
+    display: inline-block;
+}
+
+th,
+td {
+    padding: 5px;
+}
+
+h1 {
+    margin-top: 10%;
+}
+
+.sub-title {
+    margin: 5px;
+}
+
+.sub-head {
+    margin: 5px;
+}
+
+.wrapper {
+    border: 1px solid cyan;
+    background: blue;
+    text-align: center;
+    margin: 5px;
+    border-radius: 10px;
+    /* display: inline-block; */
+}
+
+.wrapper img {
+    width: 60%;
+    padding: 5%;
+}
