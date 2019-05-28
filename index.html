@@ -2,6 +2,8 @@
 <html>
 
 <head>
+
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -13,7 +15,7 @@
             <div class="row">
                 <div class="col-xs">
                     <div id="sub-head">
-                        <img src="assets/Images/MyBoii.jpg">
+                        <!-- <img src="assets/Images/MyBoii.jpg"> -->
                     </div>
                 </div>
                 <div class="col-sm">
@@ -25,7 +27,7 @@
                 </div>
                 <div class="col-xs">
                     <div class="sub-head">
-                        <img src="assets/Images/MyBoii.jpg">
+                        <!-- <img src="assets/Images/MyBoii.jpg"> -->
                     </div>
                 </div>
             </div>
@@ -50,18 +52,19 @@
                             <tbody>
                                 <tr>
                                     <!-- Train input shows here -->
-                                    <td id="name">Thomas</td>
-                                    <td id="destination">Vicarstown</td>
-                                    <td id="frequency">26</td>
-                                    <td id="arrival">04:20PM</td>
-                                    <td id="minutes">30</td>
+                                    <td id="name-display">Thomas</td>
+                                    <td id="dest-display">Vicarstown</td>
+                                    <td id="freq-display">26</td>
+                                    <td id="arrival-display">04:20PM</td>
+                                    <td id="minutes-display">30</td>
                                 </tr>
                             </tbody>
+                        </div>
                     </table>
-                    </div>
                 </div>
             </div>
         </div>
+
         <br>
 
         <!-- Train Input -->
@@ -106,7 +109,12 @@
                 </div>
             </div>
         </div>
-        <!-- container /div -->
     </div>
+    <!-- container /div -->
+    </div>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/JS/scheduler.js"></script>
 
 </body>
