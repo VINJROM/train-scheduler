@@ -25,6 +25,10 @@ h1 {
     margin: 5px;
 }
 
+.sub-body {
+    margin: 5px;
+}
+
 .wrapper {
     border: 1px solid cyan;
     background: grey;
@@ -41,4 +45,8 @@ h1 {
 
 .add-train {
     margin: 5px;
+}
+
+button {
+    margin-bottom: 20px;
 }

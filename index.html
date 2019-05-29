@@ -3,9 +3,13 @@
 
 <head>
 
-    <!-- Bootstrap -->
+    <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Link to Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
 </head>
 
 <body>
@@ -37,8 +41,9 @@
         <div class="wrapper">
             <div class="row">
                 <div class="col-sm-12">
-                    <table table="train-schedule">
-                        <div class="sub-body">
+                    <div class="sub-body">
+                        <!-- <div id="display-row"> -->
+                        <table table="train-schedule" id="display-row">
                             <h2>Current Train Schedule</h2>
                             <thead>
                                 <tr>
@@ -49,18 +54,24 @@
                                     <th scope="col"><b>Minutes Away</b></th>
                                 </tr>
                             </thead>
+                            <!-- Train input shows here -->
+
                             <tbody>
                                 <tr>
-                                    <!-- Train input shows here -->
-                                    <td id="name-display">Thomas</td>
-                                    <td id="dest-display">Vicarstown</td>
-                                    <td id="freq-display">26</td>
-                                    <td id="arrival-display">04:20PM</td>
-                                    <td id="minutes-display">30</td>
+                                    <td id="name-display"></td>
+                                    <td id="dest-display"></td>
+                                    <td id="freq-display"></td>
+                                    <td id="arrival-display"></td>
+                                    <td id="minutes-display"></td>
                                 </tr>
                             </tbody>
-                        </div>
-                    </table>
+                        </table>
+
+                        <!-- </div> -->
+                        <!-- <div class="card-body">
+                            <div id="full-member-list"></div>
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,7 +85,7 @@
                     <div class="sub-body">
                         <h2>Add Train</h2>
                         <div class="add-train">
-                            <!-- TRAIN INPUT GOES HERE-->
+                            <!-- TRAIN INPUT GOES HERE -->
                             <form>
                                 <!-- name-input -->
                                 <div class="input-group">
@@ -101,7 +112,7 @@
                                 </div>
                                 <br>
                                 <!-- submit -->
-                                <button id="submit" type="submit" class="btn btn-success">Submit</button>
+                                <button id="submit" type="submit" class="btn btn-info">Submit</button>
                                 <br>
                             </form>
                         </div>
@@ -109,12 +120,12 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- container /div -->
+
     </div>
 
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- JavaScript -->
     <script type="text/javascript" src="assets/JS/scheduler.js"></script>
 
 </body>
