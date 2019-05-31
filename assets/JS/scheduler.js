@@ -18,6 +18,8 @@
     var destination = "";
     var frequency = 0;
     var arrival = 0;
+    var arrivalFormat = "hh:mm A";
+
 
 
     // Capture button Click
@@ -30,6 +32,7 @@
             destination = $("#dest-input").val().trim(),
             frequency = $("#freq-input").val().trim(),
             arrival = $("#time-input").val().trim(),
+            // arrival = moment(arrival).format(arrivalFormat);
 
             // Code for the push
             dataRef.ref().push({
@@ -39,18 +42,16 @@
                 arrival: arrival,
             });
 
-        // Output all of the new information into the relevant HTML sections
-        // $('#name-display').text(train.name);
-        // $('#dest-display').text(train.destination);
-        // $('#freq-display').text(train.frequency);
-        // $('#arrival-display').text(train.arrival);
-        // $('#name-input').clear()
-        // $('#dest-input').clear()
-        // $('#freq-input').clear()
-        // $('#time-input').clear()
+
+        // ***WIP*** clears input field
+        // $('#name-input').empty();
+        // $('#dest-input').empty();
+        // $('#freq-input').empty();
+        // $('#time-input').empty();
+
     });
 
-    // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+    // Firebase watcher + initial loader - "Event Listener" in database
     dataRef.ref().on("child_added", function(childSnapshot) {
             // Console log each user input
             console.log(childSnapshot.val().name);
@@ -59,11 +60,13 @@
             console.log(childSnapshot.val().arrival);
 
             // full list of items to the well
-            $("#display-row").append("<tr><td id='name-display'>" + childSnapshot.val().name + "</td>" + "<td id='dest-display'>" + childSnapshot.val().destination + "</td>" + "<td id='freq-display'>" + childSnapshot.val().frequency + "</td>" + "<td id='minutes-display'>" + childSnapshot.val().arrival + "</td></tr>");
-
-
-            // Handle the errors
+            $("#display-row").prepend("<tr><td id='name-display'>" + childSnapshot.val().name + "</td>" +
+                "<td id='dest-display'>" + childSnapshot.val().destination + "</td>" +
+                "<td id='freq-display'>" + childSnapshot.val().frequency + "</td>" +
+                "<td id='arrival'-display'>" + childSnapshot.val().arrivalFormat + "</td>" +
+                "<td id='minutes-display'>" + childSnapshot.val().arrival + "</td></tr>");
         },
+        // Handle the errors
         function(errorObject) {
             console.log("Errors handled: " + errorObject.code);
         });

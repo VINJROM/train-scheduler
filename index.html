@@ -17,115 +17,111 @@
     <div class="container">
         <div class="wrapper">
             <div class="row">
-                <div class="col-xs">
-                    <div id="sub-head">
-                        <!-- <img src="assets/Images/MyBoii.jpg"> -->
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="sub-head">
-                        <div id="sub-title">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
                             <h1>Train Scheduler</h1>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs">
-                    <div class="sub-head">
-                        <!-- <img src="assets/Images/MyBoii.jpg"> -->
-                    </div>
-                </div>
             </div>
         </div>
         <br>
-        <!-- Train Schedule -->
+
+        <!-- Train Input Field -->
         <div class="wrapper">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="sub-body">
-                        <!-- <div id="display-row"> -->
-                        <table table="train-schedule" id="display-row">
-                            <h2>Current Train Schedule</h2>
-                            <thead>
-                                <tr>
-                                    <th scope="col"><b>Train Name</b></th>
-                                    <th scope="col"><b>Destination</b></th>
-                                    <th scope="col"><b>Frequency (min)</b></th>
-                                    <th scope="col"><b>Next Arrival</b></th>
-                                    <th scope="col"><b>Minutes Away</b></th>
-                                </tr>
-                            </thead>
-                            <!-- Train input shows here -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="col-sm">
+                                <div id="h2-container"></div>
+                                <!-- Header -->
+                                <h2>Add Train</h2>
+                            </div>
+                            <!-- submit button -->
+                            <button id="submit" type="submit" class="btn btn-info">Submit</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="add-train">
+                                <!-- TRAIN INPUT GOES HERE -->
+                                <form>
+                                    <!-- name-input -->
+                                    <div class="input-group">
+                                        <span class="input-group-addon"></span>
+                                        <input id="name-input" type="text" class="form-control" name="msg" placeholder="Train-Name">
+                                    </div>
+                                    <br>
+                                    <!-- dest-input -->
+                                    <div class="input-group">
+                                        <span class="input-group-addon"></span>
+                                        <input id="dest-input" type="text" class="form-control" name="msg" placeholder="Destination">
+                                    </div>
+                                    <br>
+                                    <!-- freq-input -->
+                                    <div class="input-group">
+                                        <span class="input-group-addon"></span>
+                                        <input id="freq-input" type="number" class="form-control" name="msg" placeholder="Frequency (min)">
+                                    </div>
+                                    <br>
+                                    <!-- time-input -->
+                                    <div class="input-group">
+                                        <span class="input-group-addon"></span>
+                                        <input id="time-input" type="time" class="form-control" name="msg" placeholder="First-Train-Time (hh:mm)">
+                                    </div>
 
-                            <tbody>
-                                <tr>
-                                    <td id="name-display"></td>
-                                    <td id="dest-display"></td>
-                                    <td id="freq-display"></td>
-                                    <td id="arrival-display"></td>
-                                    <td id="minutes-display"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <!-- </div> -->
-                        <!-- <div class="card-body">
-                            <div id="full-member-list"></div>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <!-- Train Input -->
-        <div class="wrapper">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="sub-body">
-                        <h2>Add Train</h2>
-                        <div class="add-train">
-                            <!-- TRAIN INPUT GOES HERE -->
-                            <form>
-                                <!-- name-input -->
-                                <div class="input-group">
-                                    <span class="input-group-addon"></span>
-                                    <input id="name-input" type="text" class="form-control" name="msg" placeholder="Train-Name">
-                                </div>
-                                <br>
-                                <!-- dest-input -->
-                                <div class="input-group">
-                                    <span class="input-group-addon"></span>
-                                    <input id="dest-input" type="text" class="form-control" name="msg" placeholder="Destination">
-                                </div>
-                                <br>
-                                <!-- freq-input -->
-                                <div class="input-group">
-                                    <span class="input-group-addon"></span>
-                                    <input id="freq-input" type="text" class="form-control" name="msg" placeholder="Frequency (min)">
-                                </div>
-                                <br>
-                                <!-- time-input -->
-                                <div class="input-group">
-                                    <span class="input-group-addon"></span>
-                                    <input id="time-input" type="text" class="form-control" name="msg" placeholder="First-Train-Time (hh:mm)">
-                                </div>
-                                <br>
-                                <!-- submit -->
-                                <button id="submit" type="submit" class="btn btn-info">Submit</button>
-                                <br>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
 
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- JavaScript -->
-    <script type="text/javascript" src="assets/JS/scheduler.js"></script>
+        <!-- Train Schedule Display -->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Current Train Schedule</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- <div id="display-row"> -->
+                            <table table="train-schedule" id="display-row">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><b>Train Name</b></th>
+                                        <th scope="col"><b>Destination</b></th>
+                                        <th scope="col"><b>Frequency (min)</b></th>
+                                        <th scope="col"><b>Next Arrival</b></th>
+                                        <th scope="col"><b>Minutes Away</b></th>
+                                    </tr>
+                                </thead>
+                                <!-- Train input shows here -->
+
+                                <tbody>
+                                    <tr>
+                                        <td id="name-display">Thomas</td>
+                                        <td id="dest-display">Sodor</td>
+                                        <td id="freq-display">10</td>
+                                        <td id="time-display">03:50 PM</td>
+                                        <td id="minutes-display">10</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- JavaScript -->
+        <script type="text/javascript" src="assets/JS/scheduler.js"></script>
+        <!-- Link to Moment.js -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </body>
