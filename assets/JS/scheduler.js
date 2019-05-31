@@ -31,7 +31,7 @@
         name = $("#name-input").val().trim(),
             destination = $("#dest-input").val().trim(),
             frequency = $("#freq-input").val().trim(),
-            arrival = $("#time-input").val().trim(),
+            arrival = $("#arrival-input").val().trim(),
             // arrival = moment(arrival).format(arrivalFormat);
 
             // Code for the push
@@ -63,8 +63,8 @@
             $("#display-row").prepend("<tr><td id='name-display'>" + childSnapshot.val().name + "</td>" +
                 "<td id='dest-display'>" + childSnapshot.val().destination + "</td>" +
                 "<td id='freq-display'>" + childSnapshot.val().frequency + "</td>" +
-                "<td id='arrival'-display'>" + childSnapshot.val().arrivalFormat + "</td>" +
-                "<td id='minutes-display'>" + childSnapshot.val().arrival + "</td></tr>");
+                "<td id='arrival'-display'>" + childSnapshot.val().arrival + "</td>" +
+                "<td id='minutes-display'>" + childSnapshot.val().arrivalFormat + "</td></tr>");
         },
         // Handle the errors
         function(errorObject) {
