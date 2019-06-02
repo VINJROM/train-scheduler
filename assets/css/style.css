@@ -8,6 +8,10 @@ body {
     display: inline-block;
 }
 
+br {
+    border-bottom: 1px black;
+}
+
 tbody,
 th,
 td,

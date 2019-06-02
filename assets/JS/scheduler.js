@@ -13,14 +13,6 @@
 
     var dataRef = firebase.database();
 
-    // Initial Values
-    var name = "";
-    var destination = "";
-    var frequency = 0;
-    var arrival = 0;
-    var arrivalFormat = "hh:mm A";
-
-
 
     // Capture button Click
     $("#submit").on("click", function(event) {
@@ -28,52 +20,53 @@
         event.preventDefault();
 
         // Capture user inputs and store them into variables
-        name = $("#name-input").val().trim(),
-            destination = $("#dest-input").val().trim(),
-            frequency = $("#freq-input").val().trim(),
-            arrival = $("#arrival-input").val().trim(),
-            // arrival = moment(arrival).format(arrivalFormat);
+        var name = $("#name-input").val().trim();
+        var destination = $("#dest-input").val().trim();
+        var frequency = $("#freq-input").val().trim();
+        var arrival = $("#arrival-input").val().trim();
+        // arrival = moment(arrival).format(arrivalFormat);
 
-            // Code for the push
-            dataRef.ref().push({
-                name: name,
-                destination: destination,
-                frequency: frequency,
-                arrival: arrival,
-            });
+        // Code for the push
+        dataRef.ref().push({
+            name: name,
+            destination: destination,
+            frequency: frequency,
+            arrival: arrival,
+        });
 
 
         // ***WIP*** clears input field
         // $('#name-input').empty();
         // $('#dest-input').empty();
         // $('#freq-input').empty();
-        // $('#time-input').empty();
+        // $('#arrival-input').empty();
 
     });
 
     // Firebase watcher + initial loader - "Event Listener" in database
-    dataRef.ref().on("child_added", function(childSnapshot) {
-            // Console log each user input
-            console.log(childSnapshot.val().name);
-            console.log(childSnapshot.val().destination);
-            console.log(childSnapshot.val().frequency);
-            console.log(childSnapshot.val().arrival);
 
-            // full list of items to the well
-            $("#display-row").prepend("<tr><td id='name-display'>" + childSnapshot.val().name + "</td>" +
-                "<td id='dest-display'>" + childSnapshot.val().destination + "</td>" +
-                "<td id='freq-display'>" + childSnapshot.val().frequency + "</td>" +
-                "<td id='arrival'-display'>" + childSnapshot.val().arrival + "</td>" +
-                "<td id='minutes-display'>" + childSnapshot.val().arrivalFormat + "</td></tr>");
-        },
-        // Handle the errors
-        function(errorObject) {
-            console.log("Errors handled: " + errorObject.code);
-        });
-    dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-        // Change the HTML to reflect
-        $("#name-display").text(snapshot.val().name);
-        $("#dest-display").text(snapshot.val().destination);
-        $("#freq-display").text(snapshot.val().frequency);
-        $("#arrival-display").text(snapshot.val().arrival);
+    dataRef.ref().on("child_added", function(childSnapshot) {
+        // Console log each user input
+        console.log(childSnapshot.val().name);
+        console.log(childSnapshot.val().destination);
+        console.log(childSnapshot.val().frequency);
+        console.log(childSnapshot.val().arrival);
+
+        // Creating variables for Firebase data
+        var trainName = childSnapshot.val().name;
+        var destinationName = childSnapshot.val().destination;
+        var trainFrequency = childSnapshot.val().frequency;
+        var firstTime = childSnapshot.val().arrival;
+        // var trainDist = childSnapshot.val().dist;
+
+        // Displays Firebase variables
+        var newRow = $('<tr>').prepend(
+            $("<td>").text(trainName),
+            $("<td>").text(destinationName),
+            $("<td>").text(trainFrequency),
+            $("<td>").text(firstTime),
+        );
+
+        $("#display-row").append(newRow);
+
     });
