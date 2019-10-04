@@ -1,0 +1,74 @@
+form {
+  margin: 8px;
+}
+
+body {
+  background-color: black;
+  background-image: url("https://i2-prod.getsurrey.co.uk/incoming/article11090310.ece/ALTERNATES/s1200/GettyImages-3309051.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* opacity: 0.8; */
+}
+
+.jHead {
+  border-radius: 6px;
+  border-style: solid;
+  border-width: thin;
+  border-color: white;
+  margin-bottom: 15px;
+  padding: 26px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+br {
+  color: white;
+}
+
+.panel-info,
+.panel-success {
+  background-color: black;
+  color: white;
+}
+
+.addFormAlert {
+  margin-top: 5px;
+  display: none;
+}
+
+.updateFormAlert {
+  margin-top: 5px;
+  display: none;
+}
+
+#theTime {
+  font-weight: bolder;
+}
+
+.arrivingAlert {
+  color: red;
+  font-weight: bolder;
+}
+
+.glyphicon-remove {
+  color: black;
+}
+
+.glyphicon-remove:hover {
+  cursor: pointer;
+}
+
+.glyphicon-remove:active {
+  color: black !important;
+}
+
+.updateFormRow {
+  display: none;
+}
+
+.panel {
+  overflow: auto;
+}
